@@ -41,32 +41,88 @@ var meses = [
 var midata = {
   labels: meses,
   datasets: [
-    // Cada una de las líneas del gráfico
+      // Cada una de las líneas del gráfico
     {
       label: "Beneficios",
       data: beneficios,
       tension: 0.5,
       fill: true,
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-      pointRadius: 5,
-      pointBorderColor: "rgba(255, 99, 132)",
-      pointBackgroundColor: "rgba(255, 99, 132)",
+      borderColor: "rgba(102, 126, 234, 1)",
+      backgroundColor: "rgba(102, 126, 234, 0.2)",
+      pointRadius: 6,
+      pointHoverRadius: 8,
+      pointBorderColor: "rgba(102, 126, 234, 1)",
+      pointBackgroundColor: "rgba(102, 126, 234, 1)",
+      pointBorderWidth: 2,
     },
     {
-      label: "Otra línea",
+      label: "Ventas",
       data: [20, 25, 60, 65, 45, 10, 0, 25, 35, 7, 20, 25],
+      tension: 0.5,
+      fill: true,
+      borderColor: "rgba(118, 75, 162, 1)",
+      backgroundColor: "rgba(118, 75, 162, 0.2)",
+      pointRadius: 6,
+      pointHoverRadius: 8,
+      pointBorderColor: "rgba(118, 75, 162, 1)",
+      pointBackgroundColor: "rgba(118, 75, 162, 1)",
+      pointBorderWidth: 2,
     },
   ],
 };
 
 var misoptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      position: 'top',
+      labels: {
+        font: {
+          family: "'Inter', sans-serif",
+          size: 14,
+          weight: '600'
+        },
+        padding: 20,
+        usePointStyle: true,
+      }
+    },
+    tooltip: {
+      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      titleColor: '#1a1a1a',
+      bodyColor: '#1a1a1a',
+      borderColor: 'rgba(102, 126, 234, 0.3)',
+      borderWidth: 1,
+      padding: 12,
+      font: {
+        family: "'Inter', sans-serif",
+        size: 13
+      }
+    }
+  },
   scales: {
     y: {
       min: 0,
+      grid: {
+        color: 'rgba(0, 0, 0, 0.05)',
+      },
+      ticks: {
+        font: {
+          family: "'Inter', sans-serif",
+          size: 12
+        }
+      }
     },
     x: {
-      ticks: { color: "rgb(255, 99, 132)" },
+      grid: {
+        display: false,
+      },
+      ticks: {
+        font: {
+          family: "'Inter', sans-serif",
+          size: 12
+        }
+      }
     },
   },
 };

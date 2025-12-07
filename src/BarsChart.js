@@ -40,19 +40,52 @@ var meses = [
 
 var misoptions = {
   responsive: true,
-  animation: false,
+  maintainAspectRatio: false,
+  animation: {
+    duration: 1500,
+    easing: 'easeInOutQuart'
+  },
   plugins: {
     legend: {
       display: false,
     },
+    tooltip: {
+      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      titleColor: '#1a1a1a',
+      bodyColor: '#1a1a1a',
+      borderColor: 'rgba(102, 126, 234, 0.3)',
+      borderWidth: 1,
+      padding: 12,
+      font: {
+        family: "'Inter', sans-serif",
+        size: 13
+      }
+    }
   },
   scales: {
     y: {
       min: -25,
       max: 100,
+      grid: {
+        color: 'rgba(0, 0, 0, 0.05)',
+      },
+      ticks: {
+        font: {
+          family: "'Inter', sans-serif",
+          size: 12
+        }
+      }
     },
     x: {
-      ticks: { color: "rgba(0, 220, 195)" },
+      grid: {
+        display: false,
+      },
+      ticks: {
+        font: {
+          family: "'Inter', sans-serif",
+          size: 12
+        }
+      }
     },
   },
 };
@@ -63,11 +96,15 @@ var midata = {
     {
       label: "Beneficios",
       data: beneficios,
-      backgroundColor: "rgba(0, 220, 195, 0.5)",
+      backgroundColor: "rgba(102, 126, 234, 0.7)",
+      borderColor: "rgba(102, 126, 234, 1)",
+      borderWidth: 2,
+      borderRadius: 8,
+      borderSkipped: false,
     },
   ],
 };
 
-export default function Bars() {
+export default function BarsChart() {
   return <Bar data={midata} options={misoptions} />;
 }

@@ -1,38 +1,152 @@
 .App {
+  min-height: 100vh;
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-title {
+  text-align: center;
+  color: white;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 60px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.chart-section {
+  margin-bottom: 60px;
+  animation: slideIn 0.6s ease-out;
+}
+
+.chart-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.chart-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.chart-section:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.section-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.chart-container {
+  background: var(--card-gradient);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-xl);
+  margin: 0 auto;
+  max-width: 700px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chart-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+  transition: left 0.5s;
+}
+
+.chart-container:hover::before {
+  left: 100%;
+}
+
+.chart-container:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 400px;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  margin: 40px 0;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px 10px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .app-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .chart-section {
+    margin-bottom: 40px;
+  }
+  
+  .chart-container {
+    padding: 20px;
+  }
+  
+  .chart-wrapper {
+    height: 300px;
+  }
+  
+  .section-title {
+    font-size: 20px;
   }
 }
