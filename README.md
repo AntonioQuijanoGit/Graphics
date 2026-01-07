@@ -1,2 +1,4 @@
 ## Graphics
-Este proyecto implementa gráficos interactivos utilizando la librería react-chartjs-2, una versión optimizada para React basada en ChartJS. Proporciona una integración sencilla para la visualización de datos en aplicaciones web.
+This project implements interactive charts using the react-chartjs-2 library, an optimized version for React based on ChartJS. It provides simple integration for data visualization in web applications.
+
+
